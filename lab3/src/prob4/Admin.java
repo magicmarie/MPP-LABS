@@ -5,18 +5,28 @@ public class Admin {
 		double totalRent = 0;
 		for (Object o : properties) {
 			if (o instanceof House) {
-				House h = (House) o;
-				totalRent += h.computeRent();
+				House house = (House) o;
+				totalRent += house.computeRent();
 			}
 			else if (o instanceof Condo) {
-				Condo h = (Condo) o;
-				totalRent += h.computeRent();
+				Condo condo = (Condo) o;
+				totalRent += condo.computeRent();
 			}
 			else if (o instanceof Trailer) {
-				Trailer h = (Trailer) o;
-				totalRent += h.computeRent();
+				Trailer trailer = (Trailer) o;
+				totalRent += trailer.computeRent();
 			}
 		}
+		return totalRent;
+	}
+
+	public static double computeTotalRentWithInheritance(Property[] properties) {
+		double totalRent = 0;
+
+		for (Property p : properties) {
+			totalRent += p.computeRent();
+		}
+
 		return totalRent;
 	}
 }

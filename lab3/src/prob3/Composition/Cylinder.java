@@ -1,8 +1,8 @@
 package prob3.Composition;
 
 public class Cylinder {
-    private Circle circle;
     private double height;
+    private Circle circle;
 
     public Cylinder(double radius, double height) {
         this.height = height;
