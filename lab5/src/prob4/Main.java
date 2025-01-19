@@ -4,15 +4,15 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        Customer cust = new Customer("Bob");
-        Order order = Order.newOrder(cust, LocalDate.now());
+        Customer cust = CustOrderFactory.createCustomer("Bob");
+        Order order = CustOrderFactory.newOrder(cust, LocalDate.now());
         order.addItem("Shirt");
         order.addItem("Laptop");
 
-        order = Order.newOrder(cust, LocalDate.now());
+        order = CustOrderFactory.newOrder(cust, LocalDate.now());
         order.addItem("Pants");
         order.addItem("Knife set");
 
-        System.out.println(cust.getOrders());
+        System.out.println("Customer:" + cust.getName() + "\nOrders List: " + cust.getOrders());
     }
 }
