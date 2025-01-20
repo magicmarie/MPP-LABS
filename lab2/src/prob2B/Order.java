@@ -7,9 +7,10 @@ public class Order {
     private String orderNumber;
     private List<OrderLine> orderLines;
 
-    public Order(String orderNumber) {
+    public Order(String orderNumber, double price) {
         this.orderNumber = orderNumber;
         this.orderLines = new ArrayList<>();
+        addOrderLine(this, price);
     }
 
     public String getOrderNumber() {
@@ -20,7 +21,7 @@ public class Order {
         return orderLines;
     }
 
-    public void addOrderLine(OrderLine orderLine) {
-        orderLines.add(orderLine);
+    public void addOrderLine(Order order, double price) {
+        orderLines.add(new OrderLine(order, price));
     }
 }
