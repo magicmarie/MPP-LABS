@@ -17,6 +17,10 @@ public class Cylinder {
         return height;
     }
 
+    public double getRadius() {
+        return radius;
+    }
+
     public double computeVolume() {
         return Math.PI * radius * radius * height;
     }
